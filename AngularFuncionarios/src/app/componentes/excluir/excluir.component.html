@@ -1,0 +1,18 @@
+<div>
+    <h1>Deseja confirmar a exclusão?</h1>
+    <div class="input-box">
+        <mat-form-field class=" input-box">
+            <mat-label>Funcionario</mat-label>
+            <input matInput type="text" value="{{funcionario.nome}} {{funcionario.sobrenome}}" disabled>
+        </mat-form-field>
+    </div>
+    <div class="input-box">
+        <mat-form-field class=" input-box">
+            <mat-label>Departamento</mat-label>
+            <input matInput type="text" value="{{funcionario.departamento}}" disabled>
+        </mat-form-field>
+    </div>
+    <div class="button-box">
+        <button mat-flat-button color="accent" (click)="delete(funcionario.id)">Confirmar</button>
+    </div>
+</div>

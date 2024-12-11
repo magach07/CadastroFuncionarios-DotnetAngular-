@@ -1,0 +1,65 @@
+<mat-card>
+    <h1>Detalhes Funcionario</h1>
+    <div *ngIf="funcionario">
+        <form>
+            <div class="input-box">
+                <mat-form-field class="input-box">
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" value="{{funcionario.nome}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input-box">
+                <mat-form-field class="input-box">
+                    <mat-label>Sobrenome</mat-label>
+                    <input matInput type="text" value="{{funcionario.sobrenome}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input-box">
+                <mat-form-field class="input-box">
+                    <mat-label>Departamento</mat-label>
+                    <input matInput type="text" value="{{funcionario.departamento}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input-box">
+                <mat-form-field class="input-box">
+                    <mat-label>Turno</mat-label>
+                    <input matInput type="text" value="{{funcionario.turno}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input-box">
+                <mat-form-field class="input-box">
+                    <mat-label>Situação</mat-label>
+                    <input matInput type="text" value="{{funcionario.ativo == true ? 'Ativo' : 'Inativo'}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input-box">
+                <mat-form-field class=" input-box">
+                    <mat-label>Data de Criação</mat-label>
+                    <input matInput type="text" value="{{funcionario.dataDeCriacao}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input-box">
+                <mat-form-field class="input-box">
+                    <mat-label>Data de Alteração</mat-label>
+                    <input matInput type="text" value="{{funcionario.dataDeAlteracao}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="btn-box">
+                <button type="submit" mat-flat-button color="accent" *ngIf="funcionario.ativo else ativarFuncionario"
+                    (click)="ativaInativaFuncionario()">Inativar Usuário</button>
+                <ng-template #ativarFuncionario>
+                    <button mat-flat-button color="accent" type="submit" (click)="ativaInativaFuncionario()">Ativar
+                        Usuário</button>
+                </ng-template>
+                <button mat-button routerLink="">Voltar</button>
+            </div>
+        </form>
+    </div>
+</mat-card>
